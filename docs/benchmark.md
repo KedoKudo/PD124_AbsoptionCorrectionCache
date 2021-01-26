@@ -31,20 +31,22 @@ The testing following the procedure below:
 - Keep the two abs workspace (_acc, and _ass) and remove all others, then run again and record the time as `Cache (memory)`.
 
 > ENV: analysis-node11
+
 > Units: seconds
+
 > NOTE: `AlignAndFocusPowderFromFiles` also has a cache feature, which we choose not to include by removing the corresponding memory cache at step three
 
 ## SampleOnly
 
 | Test Number | No Cache | Cache (disk)   | Cache (memory) |
 | :---------: | :------: | :------------: | :------------: |
-| 1           | 367.390  | 185.980        | 169.68         |
-| 2           | 
-| 3           |
-| 4           |
-| 5           |
-| 6           |
-| avg.        |
+| 1           | 367.390  | 185.980        | 169.680        |
+| 2           | 327.340  | 199.040        | 197.620        |
+| 3           | 344.640  | 146.380        | 147.430        |
+| 4           | 247.110  | 136.580        | 151.950        |
+| 5           | 313.280  | 158.590        | 238.210        |
+| 6           | 401.540  | 200.370        | 223.210        |
+| avg.        | 333.550  | 171.157        | 188.017        |
 
 ## SampleAndContainer
 
@@ -72,10 +74,11 @@ The testing following the procedure below:
 
 # Summary
 
-Here is the summary for speed comparison using case `No Cache` as baseline
+Here is the summary of speed comparison using case `No Cache` as baseline
+for each method
 
 | Method Name        | No Cache | Cache (disk) | Cache (memory) |
 | :----------------: | :------: | :----------: | :------------: |
-| SampleOnly         | 1        |              |                |
-| SampleAndContainer | 1        | 202.043%     | 216.677%       |
-| FullPaalmanPings   | 1        |              |                |
+| SampleOnly         | 100%     | **194.880%** | 177.404%       |
+| SampleAndContainer | 100%     | 202.043%     | **216.677%**   |
+| FullPaalmanPings   | 100%     |              |                |
