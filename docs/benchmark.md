@@ -12,7 +12,7 @@ SNSPowderReduction("/SNS/PG3/IPTS-2767/nexus/PG3_46214.nxs.h5",
                    SaveAs="nexus",
                    TypeOfCorrection="SampleAndContainer",
                    SampleFormula="La-(B11)5.94-(B10)0.06",
-                   MeasuredMassDensity=2.36,  # Need to verify 'packing density' = 'measured mass density'?
+                   MeasuredMassDensity=2.36,
                    ContainerShape="PAC06",
                    OutputFilePrefix='SC_absorption_',
                    OutputDirectory=".",
@@ -22,7 +22,7 @@ SNSPowderReduction("/SNS/PG3/IPTS-2767/nexus/PG3_46214.nxs.h5",
 
 > NOTE: the type of correction is changed to corresponding abs_method for testing.
 
-# Benchmark
+# Benchmark of total runtime
 
 The testing following the procedure below:
 
@@ -64,13 +64,13 @@ The testing following the procedure below:
 
 | Test Number | No Cache | Cache (disk)   | Cache (memory) |
 | :---------: | :------: | :------------: | :------------: |
-| 1           |
-| 2           | 
-| 3           |
-| 4           |
-| 5           |
-| 6           |
-| avg.        |
+| 1           | 449.910  | 219.140        | 216.300        |
+| 2           | 394.920  | 150.770        | 148.260        |
+| 3           | 362.730  | 163.030        | 155.920        |
+| 4           | 379.980  | 222.410        | 228.460        |
+| 5           | 510.730  | 176.410        | 173.440        |
+| 6           | 605.570  | 203.500        | 184.630        |
+| avg.        | 450.640  | 189.210        | 184.502        |
 
 # Summary
 
@@ -81,4 +81,4 @@ for each method
 | :----------------: | :------: | :----------: | :------------: |
 | SampleOnly         | 100%     | **194.880%** | 177.404%       |
 | SampleAndContainer | 100%     | 202.043%     | **216.677%**   |
-| FullPaalmanPings   | 100%     |              |                |
+| FullPaalmanPings   | 100%     | 238.169%     | **244.247%**   |
